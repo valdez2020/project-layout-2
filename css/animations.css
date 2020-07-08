@@ -1,0 +1,184 @@
+/*ANIMACIONES */
+
+/*Creando animacion engranaje*/
+#logo .gear{
+    animation-name: rotate-gear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; /*velocidad de la animacion*/
+  }
+  
+  
+  @keyframes rotate-gear{
+    /*empieza desde*/
+    from{
+        transform: rotateZ(0deg);
+    }
+    /*hasta donde*/
+    to{
+        transform: rotateZ(360deg);
+    }
+    
+  }
+  
+  /*animacion para que el engranaje aparezca en el logo*/
+  #logo:hover .gear{
+   animation-name: fromBellow;
+   animation-duration: 500ms;
+   animation-iteration-count: initial;
+   animation-timing-function: linear;
+  
+  }
+  
+  @keyframes fromBellow{
+    0%{
+      transform: translateY(0%);
+    }
+    50%{
+      transform: translateY(200%);
+    }
+    100%{
+      transform: translateY(0%);
+    }
+  }
+  
+  /*Animacion de ingreso del texto del logo*/
+#logo:hover h3{
+    animation-name: fromRight;
+    animation-duration: 300ms;
+    animation-iteration-count: initial;
+    animation-timing-function: linear;
+}
+
+@keyframes fromRight{
+  from{
+    transform: translateX(200%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+
+/*animacion Banner*/
+
+#banner{
+    animation: backBanner 10s linear;
+}
+
+/*la posición original está en -200px -200px*/
+@keyframes backBanner{
+    0%{
+            background-position: 0 0;
+    }
+    100%{
+            background-position: -200px -200px;
+    }
+}
+
+/*animacion texto banner*/
+
+#banner h1{
+    animation: showText 5s linear;
+
+}
+
+@keyframes showText{
+    0%{
+            transform: translateX(-600%) scale(5,5);
+            opacity: 1;
+    }
+    50%{
+        transform: translateX(600%) scale(5,5);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-600%) scale(5,5);
+            text-shadow: none;
+            color: transparent; 
+            opacity: 0;
+    }
+}
+
+/*modificacion de tarjeta al hacer :hover*/
+
+.card:hover{
+background-color: black;
+}
+
+/*icons*/
+.card:hover .icon{
+    font-size: 70px;
+    color: #34bcf9;
+    animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon{
+    from{
+        transform: translateY(-200%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+/*category*/
+
+.card:hover .category{
+    color: white;
+    animation: showCategory 400ms linear;
+}
+
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%);
+        color: black;
+    }
+    to{
+        transform: translateY(0%);
+        color: white;
+    }
+}
+
+/*Text*/
+
+.card:hover .description{
+    color: white;
+    animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription{
+    from{
+        transform: translateX(-300%);
+        color: black;
+    }
+    to{
+        transform: translateX(0%);
+        color: white;
+    }
+}
+
+/*animacion para hacer el efecto neon*/
+
+#blog:hover{
+    animation: blink 7s infinite linear;
+}
+@keyframes blink{
+    0%{
+        border: 10px solid #37bcf9;
+    }
+    
+    25%{
+        border: 10px solid green;
+    }
+    50%{
+        border: 10px solid yellow;
+    }
+    75%{
+        border: 10px solid white;
+    }
+    0%{
+        border: 10px solid #37bcf9;
+    }
+}
+
+/*animacion menu footer*/
